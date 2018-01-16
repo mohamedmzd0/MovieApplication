@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="numb_clms">3</integer>
+    <dimen name="gridw">400dp</dimen>
+</resources>

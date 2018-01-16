@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".DetailActivity.View.DetailActiviy">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="352dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/cls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:textAlignment="center"
+            app:contentScrim="@color/backgruond"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
+            app:statusBarScrim="@color/backgruond">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin" />
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="fitXY"
+                android:transitionName="imageTR"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier=".7" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/movietitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="16dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/movietitle"
+                android:layout_marginBottom="10dp"
+                android:background="#5555" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/movietitle"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/isFav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/movietitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp" />
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/pp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/movietitle"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:background="#0FFF"
+                android:visibility="invisible">
+
+                <Button
+                    android:id="@+id/homepage"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#0FFF"
+                    android:text="Visit Home Page"
+                    android:textColor="#FFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/pp"
+                android:layout_marginBottom="8dp"
+                android:background="#5555" />
+
+            <GridView
+                android:id="@+id/trailer"
+                android:layout_width="@dimen/gridw"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:columnWidth="130dp"
+                android:horizontalSpacing="8dp"
+                android:numColumns="@integer/numb_clms"
+                android:verticalSpacing="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/trailer"
+                android:layout_margin="8dp"
+                android:background="#5555" />
+
+            <TextView
+                android:id="@+id/overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trailer"
+                android:padding="16dp"
+                android:textColor="#005"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.joaquimley.faboptions.FabOptions
+        android:id="@+id/fab_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:visibility="invisible" />
+</android.support.design.widget.CoordinatorLayout>
